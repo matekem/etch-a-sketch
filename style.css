@@ -1,0 +1,30 @@
+
+#gridBox{
+    border:1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin:0px;
+    width:800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gridSquare{
+    padding:10px;
+    
+}
+
+.gridSquare:hover{
+    background-color: blue;
+    transition: 75ms all;
+    transition-timing-function: ease-in-out;
+}
+/*
+.row{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}*/
