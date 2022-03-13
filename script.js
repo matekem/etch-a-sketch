@@ -9,7 +9,7 @@ const buttonsContainer = document.querySelector('.buttons');
 function createDivs(col,rows){
     for(let i = 0; i < (col*rows); i++ ){
         const div = document.createElement('div');
-        div.style.border = "1px solid red";
+        div.style.border = "0.1px solid lightgray";
         container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
         container.appendChild(div).classList.add('box');
@@ -48,3 +48,46 @@ function blackColor() {
 }
 
 blackColor();
+
+function rgbColor() { 
+    
+    const boxs = container.querySelectorAll('.box')
+    btnRgb.textContent = "RGB"
+    btnRgb.addEventListener('click', function() {
+        boxs.forEach(box => box.addEventListener('mouseover',function() {
+            let R = Math.floor(Math.random() * 255)
+            let G = Math.floor(Math.random() * 255)
+            let B = Math.floor(Math.random() * 255)
+            this.style.background = `rgb(${R},${G},${B})`;
+        }))
+    })
+    buttonsContainer.appendChild(btnRgb).classList.add('btn');
+}
+rgbColor();
+
+function reSet(){
+    const boxs = container.querySelectorAll('.box')
+    boxs.forEach(box => box.remove())
+}
+function reSize(){
+    btnSize.textContent = 'GRID SIZE'
+    btnSize.addEventListener('click', () => {
+        let user = prompt('What size grid would you like to create?')
+        if(user === null || user < 1){
+            reSet();
+            createDivs(16,16)
+            blackColor()
+            grayColor()
+            rgbColor()
+        }
+        else{
+            reSet();
+            createDivs(user,user)
+            blackColor()
+            grayColor()
+            rgbColor();
+        }
+    })
+    buttonsContainer.appendChild(btnSize).classList.add('btn')
+}
+reSize();
