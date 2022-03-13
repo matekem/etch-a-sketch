@@ -74,7 +74,7 @@ function reSet(){
 function reSize(){
     btnSize.textContent = 'RESIZE'
     btnSize.addEventListener('click', () => {
-        let user = prompt('What size grid would you like to create?')
+        let user = prompt('What size grid would you like to create? (1-64)')
         if(user === null || user < 1 || user >   64){
             reSet();
             createDivs(16,16)
