@@ -9,7 +9,7 @@ function genDivs(v){
       for(var j = 1; j <= v; j++){ 
           var cell = document.createElement("div"); 
           cell.className = "gridSquare"; 
-          cell.innerText = j;
+          cell.innerText = " ";
           row.appendChild(cell); 
       } 
      

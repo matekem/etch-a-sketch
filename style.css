@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 0px;
     margin:0px;
     width:800px;
@@ -13,7 +14,7 @@
 
 .gridSquare{
     padding:10px;
-    
+    background-color: black;
 }
 
 .gridSquare:hover{
