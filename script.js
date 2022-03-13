@@ -1,8 +1,8 @@
-const container = document.querySelector('.container');
-const btnBlack = document.createElement('button');
-const btnGray = document.createElement('button');
-const btnRGB = document.createElement('button');
-const btnSize = document.createElement('button');
+const container = document.querySelector('.container')
+const btnBlack = document.createElement('button')
+const btnRgb = document.createElement('button')
+const btnGray = document.createElement('button')
+const btnSize = document.createElement('button')
 const section = document.querySelector('.section');
 const buttonsContainer = document.querySelector('.buttons');
 
@@ -23,8 +23,8 @@ function grayColor() {
     
     const boxs = container.querySelectorAll('.box')
     btnGray.textContent = "GRAY"
-    btnGray.addEventListener('click', () => {
-        boxs.forEach(box => box.addEventListener('mouseover', ()=> {
+    btnGray.addEventListener('click',function(){
+        boxs.forEach(box => box.addEventListener('mouseover',function(){
             let RNum = Math.floor(Math.random() * 256);
             let GrayScale = `rgb(${RNum},${RNum},${RNum})`
             box.style.background = GrayScale;
@@ -32,4 +32,19 @@ function grayColor() {
     })
     buttonsContainer.appendChild(btnGray).classList.add('btn')
 }
+
 grayColor();
+
+function blackColor() { 
+    
+    const boxs = container.querySelectorAll('.box')
+    btnBlack.textContent = "BLACK"
+    btnBlack.addEventListener('click', function() {
+        boxs.forEach(box => box.addEventListener('mouseover',function() {
+            this.style.background = 'black';
+        }))
+    })
+    buttonsContainer.appendChild(btnBlack).classList.add('btn');
+}
+
+blackColor();
