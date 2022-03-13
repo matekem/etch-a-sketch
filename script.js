@@ -33,6 +33,7 @@ function grayColor() {
         }))
     })
     buttonsContainer.appendChild(btnGray).classList.add('btn')
+    
 }
 
 grayColor();
@@ -47,6 +48,8 @@ function blackColor() {
         }))
     })
     buttonsContainer.appendChild(btnBlack).classList.add('btn');
+
+   
 }
 
 blackColor();
@@ -64,6 +67,9 @@ function rgbColor() {
         }))
     })
     buttonsContainer.appendChild(btnRgb).classList.add('btn');
+
+   
+
 }
 rgbColor();
 
@@ -75,12 +81,14 @@ function reSize(){
     btnSize.textContent = 'RESIZE'
     btnSize.addEventListener('click', () => {
         let user = prompt('What size grid would you like to create? (1-64)')
-        if(user === null || user < 1 || user >   64){
+        if(user === null || user < 1 || user > 64){
             reSet();
             createDivs(16,16)
             blackColor()
             grayColor()
             rgbColor()
+            eraser();
+            alert("Invalid input")
         }
         else{
             reSet();
@@ -88,11 +96,12 @@ function reSize(){
             blackColor()
             grayColor()
             rgbColor();
+            eraser();
         }
     })
     buttonsContainer.appendChild(btnSize).classList.add('btn')
 }
-reSize();
+
 
 function eraser(){
     const boxs = container.querySelectorAll('.box')
@@ -103,5 +112,11 @@ function eraser(){
         }))
     })
     buttonsContainer.appendChild(eraserBtn).classList.add('btn');
+
+    
+
 }
+
+reSize();
+
 eraser();

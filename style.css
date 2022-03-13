@@ -56,3 +56,6 @@ section h1{
 h1{
     font-size: 50px;
 }
+.btn active{
+    background-color: black;
+}
