@@ -3,7 +3,8 @@ const btnBlack = document.createElement('button');
 const btnGray = document.createElement('button');
 const btnRGB = document.createElement('button');
 const btnSize = document.createElement('button');
-const buttonsContainer = document.querySelector('buttons');
+const section = document.querySelector('.section');
+const buttonsContainer = document.querySelector('.buttons');
 
 function createDivs(col,rows){
     for(let i = 0; i < (col*rows); i++ ){
@@ -16,3 +17,19 @@ function createDivs(col,rows){
 }
 
 createDivs(16,16);
+
+
+function grayColor() { 
+    
+    const boxs = container.querySelectorAll('.box')
+    btnGray.textContent = "GRAY"
+    btnGray.addEventListener('click', () => {
+        boxs.forEach(box => box.addEventListener('mouseover', ()=> {
+            let RNum = Math.floor(Math.random() * 256);
+            let GrayScale = `rgb(${RNum},${RNum},${RNum})`
+            box.style.background = GrayScale;
+        }))
+    })
+    buttonsContainer.appendChild(btnGray).classList.add('btn')
+}
+grayColor();
