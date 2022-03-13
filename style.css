@@ -1,31 +1,22 @@
-
-#gridBox{
-    border:1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0px;
-    margin:0px;
-    width:800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.gridSquare{
-    padding:10px;
-    background-color: black;
-}
-
-.gridSquare:hover{
-    background-color: blue;
-    transition: 75ms all;
-    transition-timing-function: ease-in-out;
-}
-/*
-.row{
+.section{
     display:flex;
-    align-items: center;
     justify-content: center;
-    
-}*/
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+section h1{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 4em;
+}
+.container{
+    width:600px;
+    height: 600px;
+    display: grid;
+    z-index: 100;
+
+}

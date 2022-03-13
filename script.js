@@ -1,48 +1,18 @@
-function genDivs(v){ 
-    
+const container = document.querySelector('.container');
+const btnBlack = document.createElement('button');
+const btnGray = document.createElement('button');
+const btnRGB = document.createElement('button');
+const btnSize = document.createElement('button');
+const buttonsContainer = document.querySelector('buttons');
 
-    var e = document.querySelector('#gridBox'); // whatever you want to append the rows to:
-    
-    for(var i = 0; i < v; i++){ 
-      var row = document.createElement("div"); 
-      row.className = "row"; 
-      for(var j = 1; j <= v; j++){ 
-          var cell = document.createElement("div"); 
-          cell.className = "gridSquare"; 
-          cell.innerText = " ";
-          row.appendChild(cell); 
-      } 
-     
-      e.appendChild(row); 
-      
-    } 
-    return e.innerHTML;
+function createDivs(col,rows){
+    for(let i = 0; i < (col*rows); i++ ){
+        const div = document.createElement('div');
+        div.style.border = "1px solid red";
+        container.style.gridTemplateColumns = `repeat(${col}, 1fr)`;
+        container.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+        container.appendChild(div).classList.add('box');
+    }
 }
 
-function genButtonFunction(){
-    
-    const grid = document.querySelector('#gridBox');
-    const gridSize = window.prompt("Determine the size of your grid:");
-    grid.innerHTML =  null;
-    genDivs(gridSize);
-    
-    return grid;
-}
-
-function generateNewGrid(){
-
-const genButton = document.querySelector('#generateButton');
-
-genButton.addEventListener('click', () =>{
-    genButtonFunction();
-    
-});
-}
-
-function $(id){return document.getElementById(id);}
-
-
-
-genDivs(16);
-generateNewGrid();
-asd();
+createDivs(16,16);
