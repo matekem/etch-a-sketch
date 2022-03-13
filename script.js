@@ -1,9 +1,10 @@
 const container = document.querySelector('.container')
-const btnPicker = document.createElement('button')
+const btnPicker = document.createElement('input')
 const btnBlack = document.createElement('button')
 const btnRgb = document.createElement('button')
 const btnGray = document.createElement('button')
 const btnSize = document.createElement('button')
+const eraserBtn = document.createElement('button')
 const section = document.querySelector('.section');
 const buttonsContainer = document.querySelector('.buttons');
 
@@ -93,17 +94,14 @@ function reSize(){
 }
 reSize();
 
-function colorPicker() { 
-    
+function eraser(){
     const boxs = container.querySelectorAll('.box')
-    btnPicker.textContent ="Pick a color"
-    btnPicker.addEventListener('click', function() {
+    eraserBtn.textContent = "ERASER"; 
+    eraserBtn.addEventListener('click', function() {
         boxs.forEach(box => box.addEventListener('mouseover',function() {
-            let R = Math.floor(Math.random() * 255)
-            let G = Math.floor(Math.random() * 255)
-            let B = Math.floor(Math.random() * 255)
-            this.style.background = `rgb(${R},${G},${B})`;
+           box.style.background = 'white';
         }))
     })
-    buttonsContainer.appendChild(btnRgb).classList.add('btn');
+    buttonsContainer.appendChild(eraserBtn).classList.add('btn');
 }
+eraser();
